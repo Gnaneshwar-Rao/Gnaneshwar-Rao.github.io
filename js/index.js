@@ -10,3 +10,11 @@ var firebaseConfig = {
 
 //Initialize firebase
 firebase.initializeApp(firebaseConfig);
+
+const db = firebase.firestore();
+
+for (let i = 1; i <= 30; i++) {
+  db.collection("grid-owners").doc("grid-" + i).set({
+    'grid-colour': ""
+  })
+}
